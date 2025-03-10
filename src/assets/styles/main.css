@@ -1,0 +1,194 @@
+@import "tailwindcss";
+@import "reset.css";
+@import "variable.css";
+@import "base.css";
+
+@layer base {
+    @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url("../fonts/inter/Inter-Regular.woff2") format("woff2");
+    }
+    @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url("../fonts/inter/Inter-Medium.woff2") format("woff2");
+    }
+    @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url("../fonts/inter/Inter-SemiBold.woff2") format("woff2");
+    }
+    @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url("../fonts/inter/Inter-Bold.woff2") format("woff2");
+    }
+    @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 800;
+        font-display: swap;
+        src: url("../fonts/inter/Inter-ExtraBold.woff2") format("woff2");
+    }
+}
+
+
+/* Content area styling */
+.content-area {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.short-cut {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    a {
+        color: theme('color.info.500');
+        font-weight: 500;
+        transition: all 0.3s ease;
+        padding: 0.25rem 0;
+        border-bottom: 2px solid transparent;
+
+        &.current {
+            color: theme('color.light.tx3');
+            cursor: default;
+        }
+    }
+}
+
+/* Header styling */
+header {
+    background-color: theme('color.light.bg3');
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    & .content-header {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 1rem;
+}
+
+header h1 {
+    font-size: 1.25rem;
+    font-weight: 800;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #0066cc;
+}
+
+/* Main section styling */
+main {
+    padding: 1rem 0;
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #111;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin: 1.5rem 0 0.75rem;
+        color: #333;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+        margin: 1.25rem 0 0.625rem;
+        color: #444;
+    }
+
+    p {
+        margin-bottom: 1rem;
+    }
+
+    ul, ol {
+        margin: 1rem 0;
+        padding-left: 2rem;
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0;
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 0.5rem;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    }
+
+}
+
+
+/* Footer styling */
+footer {
+    background-color: theme('color.light.bg3');
+    padding: 1rem 0;
+    text-align: center;
+    border-top: 1px solid #eee;
+    color: theme('color.light.tx3');
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header {
+        & .content-header {
+            flex-direction: column;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+    }
+
+    .social-links {
+        margin-top: 0.5rem;
+    }
+}
